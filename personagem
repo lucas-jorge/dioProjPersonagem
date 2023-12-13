@@ -1,0 +1,51 @@
+/* Desafio
+No mundo dos RPGs, a criação do personagem é um momento importante e emocionante para os jogadores! Durante esse processo, o jogador deve escolher o nome, a raça, a classe e outras características importantes para o personagem.
+
+Crie uma classe chamada "Personagem" que tenha os seguintes atributos: nome (string), raça (string), classe (string), nível (inteiro), vida (inteiro) e mana (inteiro). A classe deve ter um construtor que recebe como parâmetros o nome, a raça e a classe do personagem. O nível e a vida devem ser iniciados com valores padrão (1 e 10 , respectivamente). Além disso, crie um método chamado "exibir_status" que exibe na tela o nome, a raça, a classe, o nível, a vida e a mana do personagem.
+
+Entrada:
+A entrada deve conter as informações necessárias para a criação do personagem, como nome, raça e classe.
+
+Saída:
+A saída deve conter a frase "Status:" seguida das informações do método "exibir_status", ou seja, deve exibir na tela o nome, a raça, a classe, o nível e a vida do personagem. Conforme exemplos abaixo.
+
+Exemplos
+A tabela abaixo apresenta exemplos com alguns dados de entrada e suas respectivas saídas esperadas. Certifique-se de testar seu programa com esses exemplos e com outros casos possíveis */
+
+// Código do desafio:
+using System;
+
+class Personagem {
+  public string nome;
+  public string raca;
+  public string classe;
+  public int nivel = 1;
+  public int vida = 10;
+  public int mana;
+
+  public Personagem(string nome, string raca, string classe) {
+    this.nome = nome;
+    this.raca = raca;
+    this.classe = classe;
+  }
+
+  public void exibir_status() {
+    Console.WriteLine("Status:");
+    Console.WriteLine("Nome:" + nome);
+    Console.WriteLine("Raça:" + raca);
+    Console.WriteLine("Classe:" + classe);
+    Console.WriteLine("Nível:" + nivel);
+    Console.WriteLine("Vida:" + vida);
+  }
+}
+
+class MainClass {
+  public static void Main (string[] args) {
+    string nome = Console.ReadLine();
+    string raca = Console.ReadLine();
+    string classe = Console.ReadLine();
+
+    Personagem p = new Personagem(nome, raca, classe);
+    p.exibir_status();
+  }
+}
